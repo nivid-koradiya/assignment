@@ -7,7 +7,6 @@ from django.db import models
 
 
 #creating the model for required dataset - naming it as assignments
-
 class assignments(models.Model):
 
     id = models.CharField(primary_key=True, max_length=36)
@@ -20,6 +19,6 @@ class assignments(models.Model):
     def __str__(self) -> str:
         return self.name
     
-
+    #setting visible name to assignment
     class Meta:
         verbose_name_plural = "assignment"

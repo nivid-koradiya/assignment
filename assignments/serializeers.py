@@ -5,6 +5,8 @@ from assignments.models import assignments
 import random
 import string
 from rest_framework import serializers
+
+#using this function to generate a multibit ID for unique recording of the data
 def generate_id():
     random1=""
     random1+= "".join([random.choice(string.ascii_letters + string.digits)
@@ -24,6 +26,8 @@ def generate_id():
     random1 =random1.lower()
     return(random1)
 
+
+#this serializer converts the data from database to the JSON format.
 class AssignmentSerializer(serializers.Serializer):
     id = serializers.CharField(read_only=True)
     name = serializers.CharField()
